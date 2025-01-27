@@ -110,6 +110,27 @@
     transition: 0.5s;
 }
 
+.about-links {
+    display: flex;
+    gap: 40px; /* Increase the space between icons */
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.about-links a img {
+    width: 70px; /* Increase the size of the icons */
+    height: 70px;
+    transition: transform 0.3s ease;
+}
+
+.about-links a img:hover {
+    transform: scale(1.2); /* Increase hover effect scale */
+}
+
+
+
 @media(max-width: 768px){
     .about{
         gap: 80px;
@@ -169,5 +190,13 @@
     .about-achievement p{
         text-align: center;
         font-size: 16px;
+    }
+
+    .about-links{
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        gap: 20px; 
+        width: 100%; 
     }
 }
