@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import logo from '../../assets/logo.svg';
 import user_icon from '../../assets/user_icon.svg';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = () => {
+    // Check if the email is empty
+    if (!email.trim()) {
+      alert('Please enter your email address.');
+      return;
+    }
+
+    // Check for valid email format using a regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // If validations pass
+    alert('Subscribed to NewsLetter');
+  };
+
   return (
     <div className='footer'>
         <div className="footer-top">
@@ -14,9 +34,16 @@ const Footer = () => {
             <div className="footer-top-right">
                 <div className="footer-email-input">
                     <img src={user_icon} alt="" />
-                    <input type="email" placeholder='Enter your email' />
+                    <input 
+                      type="email" 
+                      placeholder='Enter your email' 
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)} 
+                    />
                 </div>
-                <div className="footer-subscribe">Subscribe</div>
+                <div className="footer-subscribe" onClick={handleSubscribe}>
+                    Subscribe
+                </div>
             </div>
         </div>
         <hr />
@@ -29,7 +56,7 @@ const Footer = () => {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

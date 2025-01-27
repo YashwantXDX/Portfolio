@@ -13,10 +13,24 @@ const MyWork = () => {
         </div>
         <div className="mywork-container">
             {mywork_data.map((work, index) => {
-                return <img key={index} src={work.w_img} alt="" />
+                return (
+                    <a 
+                        key={index} 
+                        href={work.w_link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        style={{ textDecoration: 'none' }}
+                    >
+                        <img 
+                            src={work.w_img} 
+                            alt="" 
+                            style={{ cursor: 'pointer' }} 
+                        />
+                    </a>
+                );
             })}
         </div>
-        <div className="mywork-showmore">
+        <div className="mywork-showmore" onClick={() =>  window.open('https://github.com/YashwantXDX', '_blank', 'noopener,noreferrer')}>
             <p>Show More</p>
             <img src={arrow_icon} alt="" />
         </div>
@@ -24,4 +38,4 @@ const MyWork = () => {
   )
 }
 
-export default MyWork
+export default MyWork;

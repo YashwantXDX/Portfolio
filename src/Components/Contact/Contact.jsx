@@ -10,29 +10,50 @@ const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        
-        // For Future Myself, This is the access key from which I can get email from the contact form.
-
-        // This functionality is from web3forms.com
-
+    
+        // Retrieve form values
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+    
+        // Basic validation
+        if (!name || !email || !message) {
+            alert("Please fill in all the fields.");
+            return;
+        }
+    
+        // Email format validation (optional but recommended)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+    
+        // For Future Myself: Access key for web3forms.com
         formData.append("access_key", "370a1443-c879-48d6-bf8d-f41350bb269e");
     
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
     
-        const res = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: json
-        }).then((res) => res.json());
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: json,
+            }).then((res) => res.json());
     
-        if (res.success) {
-          alert(res.message);
+            if (res.success) {
+                alert("Your message has been sent successfully!");
+            } else {
+                alert("There was an error sending your message. Please try again later.");
+            }
+        } catch (error) {
+            alert("An unexpected error occurred. Please try again.");
         }
-    }
+    };
 
   return (
     <div id='contact' className='contact'>
