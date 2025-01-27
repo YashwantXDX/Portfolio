@@ -31,7 +31,7 @@ const MyWork = () => {
             })}
         </div>
         <div className="mywork-showmore" onClick={() =>  window.open('https://github.com/YashwantXDX', '_blank', 'noopener,noreferrer')}>
-            <p>Show More</p>
+            <p>Visit Github</p>
             <img src={arrow_icon} alt="" />
         </div>
     </div>
