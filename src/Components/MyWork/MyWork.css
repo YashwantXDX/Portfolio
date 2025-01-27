@@ -98,3 +98,29 @@
         cursor: pointer;
     }
 }
+
+@media(max-width: 480px){
+    .mywork{
+        gap: 30px;
+        margin: 40px 30px;
+    }
+
+    .mywork-title h1{
+        font-size: 40px;
+    }
+
+    .mywork-container{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .mywork-container img{
+        width: 90%;
+        height: auto;
+    }
+
+    .mywork-showmore{
+        font-size: 18px;
+        padding: 20px 30px;
+    }
+}

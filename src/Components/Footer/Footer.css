@@ -85,3 +85,30 @@
         margin-bottom: 50px;
     }
 }
+
+@media(max-width: 480px){
+    .footer{
+        margin: 40px 20px;
+    }
+
+    .footer-top{
+        flex-direction: column;
+    }
+
+    .footer-top-right{
+        flex-direction: column;
+    }
+
+    .footer-email-input{
+        padding-right: 30px;
+    }
+
+    .footer-subscribe{
+        padding: 18px 45px;
+        font-size: 18px;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+    }
+}

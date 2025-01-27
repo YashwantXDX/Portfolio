@@ -176,3 +176,40 @@
         padding: 15px 40px;
     }
 }
+
+@media(max-width: 480px){
+    .contact{
+        gap: 30px;
+        margin: 40px 30px;
+    }
+
+    .contact-title h1{
+        font-size: 45px;
+    }
+
+    .contact-section{
+        flex-direction: column;
+    }
+
+    .contact-left h1{
+        font-size: 50px;
+    }
+
+    .contact-left p{
+        font-size: 18px;
+    }
+
+    .contact-right input{
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .contact-right textarea{
+        width: 80%;
+    }
+
+    .contact-submit{
+        font-size: 18px;
+        padding: 15px 40px;
+    }
+}

@@ -200,3 +200,48 @@
         width: 100%; 
     }
 }
+
+@media(max-width: 480px){
+    .about{
+        gap: 30px;
+        margin: 40px 30px;
+    }
+
+    .about-title h1{
+        font-size: 45px;
+    }
+
+    .about-sections{
+        flex-direction: column;
+    }
+
+    .about-para{
+        font-size: 18px;
+    }
+
+    .about-skill{
+        gap: 15px;
+        font-size: 18px;
+    }
+
+    .about-skill hr{
+        height: 8px;
+    }
+
+    .about-achievement h1{
+        font-size: 40px;
+    }
+
+    .about-achievement p{
+        font-size: 10px;
+    }
+
+    .about-links{
+        gap: 15px;
+    }
+
+    .about-links a img{
+        width: 50px;
+        height: 50px;
+    }
+}

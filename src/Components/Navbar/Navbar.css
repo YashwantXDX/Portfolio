@@ -95,3 +95,41 @@
         gap: 20px;
     }
 }
+
+@media(max-width: 480px){
+    .navbar{
+        margin: 20px 20px;
+    }
+
+    .nav-menu{
+        gap: 40px;
+    }
+
+    .nav-connect{
+        display: none;
+    }
+
+    .nav-mob-open{
+        display: block;
+        right: 15px;
+    }
+
+    .nav-mob-close{
+        display: block;
+        left: 200px;
+    }
+
+    .nav-menu{
+        top: 0;
+        gap: 20px;
+        width: 250px;
+        height: 100%;
+        right: -250px;
+    }
+
+    .nav-menu li{
+        font-size: 24px;
+        padding-left: 50px;
+    }
+    
+}
